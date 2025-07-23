@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leonardo Véliz – Musik</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #eee;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #40e0d0;
+      transform: scale(1.1);
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #40e0d0, #006666);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeInDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5em;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #40e0d0;
+    }
+
+    iframe {
+      border-radius: 12px;
+      width: 100%;
+      max-width: 660px;
+      height: 352px;
+      border: 0;
+      margin: 20px auto;
+      display: block;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #40e0d0;
+      color: #121212;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    a.button:hover {
+      background: #2fb3a7;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Animationen */
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Start</a>
+    <a href="#about">Über mich</a>
+    <a href="#music">Musik</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <header id="home">
+    <h1>Leonardo Véliz</h1>
+    <p>Producer • Composer • Musician</p>
+  </header>
+
+  <section id="about">
+    <h2>Über mich</h2>
+    <p>Ich bin Leonardo Véliz, Produzent und Komponist mit Fokus auf Hip-Hop, Trap und Filmscores.</p>
+  </section>
+
+  <section id="music">
+    <h2>Meine Musik</h2>
+    <iframe src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Folge mir auf Instagram:</p>
+    <p><a href="https://www.instagram.com/leonardo_velizz/" target="_blank" class="button">@leonardo_velizz</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Leonardo Véliz
+  </footer>
+
+</body>
+</html>
