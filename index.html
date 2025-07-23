@@ -1,161 +1,308 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leonardo Véliz – Musik</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Véliz | Produzent & Komponist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for animations and specific elements */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        .section-padding {
+            padding: 80px 20px;
+        }
+        .hover-scale-105:hover {
+            transform: scale(1.05);
+        }
+        .transition-all-300 {
+            transition: all 0.3s ease-in-out;
+        }
+        /* Specific styles for Spotify embeds to ensure responsiveness */
+        .spotify-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .spotify-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #121212;
-      color: #eee;
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      z-index: 100;
-    }
-
-    nav a {
-      color: #eee;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    nav a:hover {
-      color: #40e0d0;
-      transform: scale(1.1);
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(135deg, #40e0d0, #006666);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      animation: fadeInDown 1s ease;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5em;
-      animation: fadeInUp 1.5s ease;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 100px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #40e0d0;
-    }
-
-    iframe {
-      border-radius: 12px;
-      width: 100%;
-      max-width: 660px;
-      height: 352px;
-      border: 0;
-      margin: 20px auto;
-      display: block;
-    }
-
-    a.button {
-      display: inline-block;
-      background: #40e0d0;
-      color: #121212;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    a.button:hover {
-      background: #2fb3a7;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1a1a1a;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    /* Animationen */
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        /* Custom styling for the contact form and LLM input */
+        .form-input {
+            @apply w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+        }
+        .form-textarea {
+            @apply w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y;
+        }
+        .form-button {
+            @apply bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-700 transition-all-300;
+        }
+        .llm-button {
+            @apply bg-purple-600 text-white font-bold py-3 px-6 rounded-md hover:bg-purple-700 transition-all-300;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <nav>
-    <a href="#home">Start</a>
-    <a href="#about">Über mich</a>
-    <a href="#music">Musik</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
+    <!-- Header / Hero Section -->
+    <header id="hero" class="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-24 md:py-32 flex items-center justify-center overflow-hidden rounded-b-lg shadow-lg">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-up">Leonardo Véliz</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 animate-fade-in-up delay-100">Produzent | Komponist | Klangvisionär</p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+                Entdecke die Welt des Sounds: Von Hip-Hop bis Filmscore, von Pop bis Jazz – Leonardo Véliz formt Klänge, die Geschichten erzählen und neue Horizonte eröffnen. Bereit für die nächste musikalische Reise?
+            </p>
+            <a href="#portfolio" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all-300 hover-scale-105 animate-fade-in-up delay-300">
+                Portfolio entdecken <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </header>
 
-  <header id="home">
-    <h1>Leonardo Véliz</h1>
-    <p>Producer • Composer • Musician</p>
-  </header>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-gray-900 shadow-md py-4 rounded-b-lg">
+        <div class="container mx-auto flex justify-center space-x-6 md:space-x-10 px-4">
+            <a href="#hero" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Start</a>
+            <a href="#about" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Über mich</a>
+            <a href="#portfolio" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Portfolio</a>
+            <a href="#expertise" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Genres</a>
+            <a href="#collaboration" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Kollaboration</a>
+            <a href="#contact" class="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 py-2 px-3 rounded-md hover:bg-gray-700">Kontakt</a>
+        </div>
+    </nav>
 
-  <section id="about">
-    <h2>Über mich</h2>
-    <p>Ich bin Leonardo Véliz, Produzent und Komponist mit Fokus auf Hip-Hop, Trap und Filmscores.</p>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6">Über Leonardo Véliz</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Leonardo Véliz ist ein vielseitiger Musikproduzent und Komponist, dessen Leidenschaft in der Schaffung einzigartiger Klangerlebnisse liegt. Mit einem breiten Spektrum an Genres – von urbanen Beats über elektronische Landschaften bis hin zu orchestralen Filmscores – ist er stets auf der Suche nach innovativen Kombinationen und frischen Sounds.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Seine Arbeit zeichnet sich durch Detailverliebtheit, technische Präzision und eine unermüdliche Kreativität aus, die jede Produktion zu einem individuellen Meisterwerk macht. Er ist stets offen für neue Herausforderungen und freut sich darauf, mit anderen Künstlern und Projekten zusammenzuarbeiten, um musikalische Visionen zu verwirklichen.
+            </p>
+        </div>
+    </section>
 
-  <section id="music">
-    <h2>Meine Musik</h2>
-    <iframe src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <iframe src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-gray-100 rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6">Meine Arbeit</h2>
+            <p class="text-lg leading-relaxed mb-10">
+                Entdecke die Vielfalt meiner Produktionen. Ob epische Filmscores oder treibende Beats – hier findest du eine Auswahl meiner jüngsten Arbeiten. Für weitere Tracks besuche mein Spotify Profil.
+            </p>
 
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p>Folge mir auf Instagram:</p>
-    <p><a href="https://www.instagram.com/leonardo_velizz/" target="_blank" class="button">@leonardo_velizz</a></p>
-  </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Filmscore Album Embed -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Filmscores: Eine Reise durch Klangwelten</h3>
+                    <div class="spotify-embed-container">
+                        <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
 
-  <footer>
-    &copy; 2025 Leonardo Véliz
-  </footer>
+                <!-- Beat Album Embed -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Beats & Produktionen: Der Puls der Musik</h3>
+                    <div class="spotify-embed-container">
+                        <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p?si=g_Im88P8Sp2YcJwlhv-NVw" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all-300 hover-scale-105">
+                <i class="fab fa-spotify mr-2"></i> Mehr auf Spotify
+            </a>
+        </div>
+    </section>
+
+    <!-- Expertise & Vision Section -->
+    <section id="expertise" class="section-padding bg-white rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6">Genres & Vision</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Meine musikalische Reise kennt keine Grenzen. Ich produziere in einer Vielzahl von Genres, darunter:
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8 text-lg font-semibold text-gray-700">
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Hip-Hop</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Pop</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Film Scores</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Dubstep</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">House</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Dance Music</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Electronic Music</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Jazz</span>
+                <span class="bg-blue-100 px-4 py-2 rounded-full shadow-sm">Funk</span>
+            </div>
+            <p class="text-lg leading-relaxed mb-10">
+                Doch meine wahre Leidenschaft liegt im Experimentieren. Ich liebe es, Genres zu kombinieren, unerwartete Elemente zu verbinden und so völlig neue, unverwechselbare Sounds zu kreieren. Wenn du auf der Suche nach etwas Einzigartigem bist, bist du hier richtig.
+            </p>
+
+            <!-- Gemini API Feature: Genre Fusion Suggestion -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-3xl font-bold text-purple-700 mb-6">✨ Probiere eine Genre-Fusion!</h3>
+                <p class="text-lg leading-relaxed mb-6">
+                    Möchtest du eine Idee für eine spannende Genre-Kombination? Gib 2-3 Genres ein und lass dich inspirieren!
+                </p>
+                <div class="max-w-md mx-auto text-left">
+                    <textarea id="genreInput" rows="3" placeholder="Z.B. 'Hip-Hop, Jazz, Electronic' oder 'Classical, Dubstep'" class="form-textarea"></textarea>
+                    <button id="generateFusionBtn" class="llm-button w-full">
+                        ✨ Genre-Fusion vorschlagen
+                    </button>
+                    <div id="fusionOutput" class="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-md text-gray-800 text-left hidden">
+                        <p class="font-semibold mb-2">Deine Genre-Fusion Idee:</p>
+                        <p id="fusionText" class="whitespace-pre-wrap"></p>
+                    </div>
+                    <div id="loadingIndicator" class="mt-4 text-purple-600 font-semibold hidden">
+                        <i class="fas fa-spinner fa-spin mr-2"></i> Generiere Idee...
+                    </div>
+                    <div id="errorOutput" class="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md hidden">
+                        Ein Fehler ist aufgetreten. Bitte versuche es später erneut.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section id="collaboration" class="section-padding bg-blue-700 text-white rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-6">Lass uns zusammenarbeiten!</h2>
+            <p class="text-lg leading-relaxed mb-8">
+                Bist du ein Artist, Filmemacher, Game Developer oder eine Marke, die auf der Suche nach dem perfekten Sound ist? Ich bin immer offen für spannende Kollaborationen und helfe dir gerne dabei, deine Vision musikalisch zum Leben zu erwecken.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all-300 hover-scale-105">
+                Jetzt Kontakt aufnehmen <i class="fas fa-envelope ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="section-padding bg-gray-100 rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6">Finde mich online</h2>
+            <p class="text-lg leading-relaxed mb-8">
+                Bleibe auf dem Laufenden und verbinde dich mit mir auf meinen Plattformen:
+            </p>
+            <div class="flex justify-center space-x-8 text-5xl">
+                <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p?si=g_Im88P8Sp2YcJwlhv-NVw" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-600 transition-colors duration-300 hover-scale-105">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:text-pink-700 transition-colors duration-300 hover-scale-105">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UClIGR8UlJveDkFBtGl6qpQg" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 transition-colors duration-300 hover-scale-105">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white rounded-lg shadow-md mx-4 my-8 md:mx-auto max-w-4xl">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6">Kontakt</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                Für Anfragen, Projekte oder einfach nur, um Hallo zu sagen, erreichst du mich am besten per E-Mail oder über Instagram:
+            </p>
+            <p class="text-xl font-semibold mb-4">
+                E-Mail: <a href="mailto:leonardo.veliz.rosa@gmail.com" class="text-blue-600 hover:underline">leonardo.veliz.rosa@gmail.com</a>
+            </p>
+            <p class="text-xl font-semibold mb-8">
+                Instagram: <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline">@leonardo_velizz</a>
+            </p>
+
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Sende mir eine Nachricht</h3>
+            <p class="text-sm text-gray-600 mb-6">
+                Bitte beachte: Dieses Formular öffnet dein Standard-E-Mail-Programm, um die Nachricht zu senden.
+            </p>
+            <form action="mailto:leonardo.veliz.rosa@gmail.com" method="post" enctype="text/plain" class="max-w-md mx-auto text-left">
+                <input type="text" name="name" placeholder="Dein Name" class="form-input" required>
+                <input type="email" name="email" placeholder="Deine E-Mail-Adresse" class="form-input" required>
+                <input type="text" name="subject" placeholder="Betreff" class="form-input" required>
+                <textarea name="body" rows="6" placeholder="Deine Nachricht" class="form-textarea" required></textarea>
+                <button type="submit" class="form-button">
+                    Nachricht senden <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 text-center rounded-t-lg shadow-lg">
+        <p>&copy; 2025 Leonardo Véliz. Alle Rechte vorbehalten.</p>
+        <p class="text-sm mt-2">Designed with passion for sound.</p>
+    </footer>
+
+    <script>
+        document.getElementById('generateFusionBtn').addEventListener('click', async () => {
+            const genreInput = document.getElementById('genreInput').value.trim();
+            const fusionOutput = document.getElementById('fusionOutput');
+            const fusionText = document.getElementById('fusionText');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const errorOutput = document.getElementById('errorOutput');
+
+            // Reset previous state
+            fusionOutput.classList.add('hidden');
+            errorOutput.classList.add('hidden');
+            fusionText.textContent = '';
+
+            if (!genreInput) {
+                fusionText.textContent = 'Bitte gib mindestens zwei Genres ein.';
+                fusionOutput.classList.remove('hidden');
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+
+            try {
+                let chatHistory = [];
+                const prompt = `Generiere eine kurze, kreative Idee für eine musikalische Genre-Fusion basierend auf den folgenden Genres: ${genreInput}. Beschreibe den Sound in 1-2 Sätzen.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    fusionText.textContent = text;
+                    fusionOutput.classList.remove('hidden');
+                } else {
+                    errorOutput.classList.remove('hidden');
+                    console.error('Unexpected API response structure:', result);
+                }
+            } catch (error) {
+                errorOutput.classList.remove('hidden');
+                console.error('Error calling Gemini API:', error);
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
