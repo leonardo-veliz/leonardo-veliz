@@ -1,238 +1,341 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Leonardo Véliz – Musikproduzent für Hip-Hop, Pop, Filmscores, elektronische Musik und mehr.">
+  <meta name="description" content="Leonardo Véliz – Music Producer for Hip-Hop, Pop, Film Scores, Electronic Music, and more.">
   <title>Leonardo Véliz – Music Producer</title>
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Import the Montserrat font */
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
+    /* Custom Tailwind configuration for the font */
+    html {
+      scroll-behavior: smooth; /* For smooth scrolling */
+    }
     body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif; /* Montserrat as primary font */
+    }
+    /* Additional styles for the header background, as Tailwind does not offer direct gradient overlay + image combination */
+    .header-bg {
+      /* New background image for the header */
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+                  url('https://1drv.ms/i/c/294e65152ee4bcdd/IQQcoK3Q-SfjRZfvsAmyn_kuAeX0ASvUxPkrzCAQ_O3-x1E') no-repeat center center/cover;
     }
 
-    header {
-      /* Hintergrundbild des Studios von OneDrive */
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
-                  url('https://1drv.ms/i/c/294e65152ee4bcdd/IQQvqyDW9pwcTasfbG4I30_KAfFKfnmw0sMV53CnnEGhIVM?width=4032&height=2268') no-repeat center center/cover;
-      height: 100vh;
+    /* Styles for section scroll animation */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(50px); /* More pronounced slide-up */
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Longer and smoother transition */
+      will-change: opacity, transform;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Carousel specific styles */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+      background-color: #1a202c; /* Dark background for letterboxing */
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+    }
+
+    .carousel-slide {
+      min-width: 100%; /* Each slide takes full width */
+      box-sizing: border-box;
+      display: flex; /* Use flexbox to center image */
+      justify-content: center;
+      align-items: center;
+      height: 500px; /* Fixed height for the slide container */
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%; /* Image takes full height of the slide container */
+      display: block;
+      border-radius: 12px; /* Ensure images also have rounded corners */
+      object-fit: contain; /* Ensures entire image is visible, adds letterboxing if aspect ratio differs */
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #fff;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      z-index: 10;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: 800;
+    .carousel-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: translateY(-50%) scale(1.1);
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      font-weight: 400;
+    .carousel-button.prev {
+      left: 10px;
     }
 
-    header a.cta {
-      display: inline-block;
-      padding: 10px 25px;
-      background: #e3b23c;
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: background 0.3s;
+    .carousel-button.next {
+      right: 10px;
     }
 
-    header a.cta:hover {
-      background: #f7d774;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      z-index: 1000;
+      gap: 8px;
+      z-index: 10;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #e3b23c;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #e3b23c;
-    }
-
-    .about p {
-      text-align: center;
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .music iframe {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 30px;
-    }
-
-    .socials {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .socials a {
-      color: #e3b23c;
-      font-size: 2rem;
-      margin: 0 10px;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      color: #fff;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 20px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .contact-form input, 
-    .contact-form textarea {
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
-    .contact-form button {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #e3b23c;
-      color: #000;
-      font-weight: 600;
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .contact-form button:hover {
-      background: #f7d774;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
+    .carousel-dot.active {
+      background-color: #e3b23c; /* Yellow color */
+      transform: scale(1.2);
     }
   </style>
 </head>
-<body>
-  <nav>
-    <a href="#about">Über</a>
-    <a href="#music">Musik</a>
-    <a href="#contact">Kontakt</a>
+<body class="bg-gray-900 text-white leading-relaxed">
+  <!-- Fixed Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 flex justify-center py-4 z-50 rounded-b-lg shadow-lg">
+    <a href="#about" class="text-white no-underline mx-4 font-semibold transition-all duration-300 hover:text-yellow-400 hover:scale-105">About</a>
+    <a href="#music" class="text-white no-underline mx-4 font-semibold transition-all duration-300 hover:text-yellow-400 hover:scale-105">Music</a>
+    <a href="#genres" class="text-white no-underline mx-4 font-semibold transition-all duration-300 hover:text-yellow-400 hover:scale-105">Genres</a>
+    <a href="#gallery" class="text-white no-underline mx-4 font-semibold transition-all duration-300 hover:text-yellow-400 hover:scale-105">Gallery</a>
+    <a href="#contact" class="text-white no-underline mx-4 font-semibold transition-all duration-300 hover:text-yellow-400 hover:scale-105">Contact</a>
   </nav>
 
-  <header>
-    <div>
-      <h1>Leonardo Véliz</h1>
-      <p>Music Producer – Hip-Hop, Pop, Filmscores & mehr</p>
-      <a class="cta" href="#music">Meine Musik entdecken</a>
+  <!-- Hero Section (Homepage) -->
+  <header class="header-bg h-screen flex items-center justify-center text-center text-white">
+    <div class="p-4 md:p-8 bg-black bg-opacity-50 rounded-xl shadow-2xl">
+      <h1 class="text-5xl font-extrabold mb-4 md:text-6xl">Leonardo Véliz</h1>
+      <!-- Adjusted subtitle -->
+      <p class="text-lg my-5 font-normal md:text-xl">Producer - Composer - Musician</p>
+      <a class="inline-block px-8 py-4 bg-yellow-500 text-black font-semibold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-xl" href="#music">
+        Discover My Music
+      </a>
     </div>
   </header>
 
-  <section id="about" class="about">
-    <h2>Über Leonardo</h2>
-    <p>Leonardo Véliz ist ein vielseitiger Musikproduzent, der Genres kombiniert und neue Klangwelten erschafft. Ob Hip-Hop, Filmscores oder elektronische Musik – er liebt es, Künstlern und Projekten einen einzigartigen Sound zu geben. Immer offen für neue Ideen und kreative Partnerschaften.</p>
+  <!-- About Me Section -->
+  <section id="about" class="py-16 px-5 max-w-5xl mx-auto fade-in-section">
+    <h2 class="text-center text-4xl mb-8 text-yellow-500 font-bold">About Leonardo</h2>
+    <p class="text-lg text-center max-w-3xl mx-auto leading-relaxed">
+      Leonardo Véliz is a versatile music producer and composer who breaks genre boundaries to create unique and impactful sound experiences. With a deep passion for music and an eye for detail, he transforms musical visions into sonic reality. He is always open to new ideas and creative partnerships to develop innovative sounds together.
+    </p>
   </section>
 
-  <section id="music" class="music">
-    <h2>Meine Musik</h2>
-    <h3 style="color:#fff;">Filmscore Album</h3>
-    <iframe src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <h3 style="color:#fff;">Beat Album</h3>
-    <iframe src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-inPicture" loading="lazy"></iframe>
-    <div class="socials">
-      <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p" target="_blank"><i class="fab fa-spotify"></i></a>
-      <a href="https://www.instagram.com/leonardo_velizz/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UClIGR8UlJveDkFBtGl6qpQg" target="_blank"><i class="fab fa-youtube"></i></a>
+  <!-- Music Section (Portfolio) -->
+  <section id="music" class="py-16 px-5 max-w-5xl mx-auto bg-gray-800 rounded-xl shadow-xl fade-in-section">
+    <h2 class="text-center text-4xl mb-8 text-yellow-500 font-bold">My Music</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-white text-2xl font-semibold mb-4 text-center">Filmscore Album</h3>
+        <iframe src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="w-full rounded-xl shadow-lg"></iframe>
+      </div>
+      <div>
+        <h3 class="text-white text-2xl font-semibold mb-4 text-center">Beat Album</h3>
+        <iframe src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="w-full rounded-xl shadow-lg"></iframe>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p" target="_blank" class="inline-block px-6 py-3 bg-gray-700 text-white font-semibold rounded-full transition-all duration-300 hover:bg-gray-600 hover:scale-105 hover:shadow-lg">
+        Listen more on Spotify <i class="fab fa-spotify ml-2"></i>
+      </a>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Kontakt</h2>
-    <p style="text-align:center;">Schreibe mir: <a href="mailto:leonardo.veliz.rosa@gmail.com" style="color:#e3b23c;">leonardo.veliz.rosa@gmail.com</a></p>
-    <p style="text-align:center;">Oder über Instagram: <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" style="color:#e3b23c;">@leonardo_velizz</a></p>
-    
-    <form class="contact-form" action="mailto:leonardo.veliz.rosa@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Dein Name" required>
-      <input type="email" name="email" placeholder="Deine E-Mail" required>
-      <textarea name="message" placeholder="Deine Nachricht" rows="5" required></textarea>
-      <button type="submit">Nachricht senden</button>
-    </form>
+  <!-- Genres & Vision Section -->
+  <section id="genres" class="py-16 px-5 max-w-5xl mx-auto fade-in-section">
+    <h2 class="text-center text-4xl mb-8 text-yellow-500 font-bold">Genres & Vision</h2>
+    <p class="text-lg text-center max-w-3xl mx-auto mb-8 leading-relaxed">
+      Leonardo produces in a wide variety of genres and loves to create new soundscapes by combining different styles. His expertise includes:
+    </p>
+    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center text-lg mb-12">
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Hip-Hop</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Pop</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Film Scores</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Dubstep</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">House</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Dance Music</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Electronic Music</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Jazz</li>
+      <li class="bg-gray-800 p-3 rounded-lg shadow-md">Funk</li>
+    </ul>
   </section>
 
-  <footer>
-    &copy; 2025 Leonardo Véliz – Alle Rechte vorbehalten.
+  <!-- Image Gallery Section -->
+  <section id="gallery" class="py-16 px-5 max-w-5xl mx-auto bg-gray-800 rounded-xl shadow-xl fade-in-section">
+    <h2 class="text-center text-4xl mb-8 text-yellow-500 font-bold">Gallery</h2>
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Images for the carousel from OneDrive -->
+        <div class="carousel-slide"><img src="https://1drv.ms/i/c/294e65152ee4bcdd/IQT3eAwTJJ5ZQqspbxkBbimBAe4vc0v-0ntbAfIxpAD0hEQ" alt="Studio Image 1"></div>
+        <div class="carousel-slide"><img src="https://1drv.ms/i/c/294e65152ee4bcdd/IQT2V8FcFzBeRq8jJCvGalvVAa2xbhkJGxa_NSOxYveOx-0" alt="Studio Image 2"></div>
+        <div class="carousel-slide"><img src="https://1drv.ms/i/c/294e65152ee4bcdd/IQT6n6f-NrERT7EDNnB8kQaOAZvrCa4fEg7nPKc2fQi3NNE" alt="Studio Image 3"></div>
+        <div class="carousel-slide"><img src="https://1drv.ms/i/c/294e65152ee4bcdd/IQSPaHE2aOTARLQY59YuZaihAaoWkUPoYsHNSp_me10ZVyo?width=6960&height=4640" alt="Studio Image 4"></div>
+        <div class="carousel-slide"><img src="https://1drv.ms/i/c/294e65152ee4bcdd/IQQOP8ywYB7qSYm-CGeHOaVGASyIDbS4L-kijCVS4o30znI?width=4640&height=6960" alt="Studio Image 5"></div>
+      </div>
+      <button class="carousel-button prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-button next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
+      <div class="carousel-dots" id="carouselDots">
+        <!-- Dots will be generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-5 max-w-5xl mx-auto bg-gray-800 rounded-xl shadow-xl fade-in-section">
+    <h2 class="text-center text-4xl mb-8 text-yellow-500 font-bold">Contact</h2>
+    <p class="text-lg text-center mb-4">
+      Email me directly: <a href="mailto:leonardo.veliz.rosa@gmail.com" class="text-yellow-400 hover:text-yellow-300 transition-colors duration-300 font-semibold hover:scale-105">leonardo.veliz.rosa@gmail.com</a>
+    </p>
+    <p class="text-lg text-center mb-8">
+      Or contact me via Instagram: <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors duration-300 font-semibold hover:scale-105">@leonardo_velizz</a>
+    </p>
+    
+    <form class="contact-form max-w-xl mx-auto flex flex-col gap-4 p-6 bg-gray-700 rounded-lg shadow-inner" action="mailto:leonardo.veliz.rosa@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required class="p-3 rounded-lg border-none text-base bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+      <input type="email" name="email" placeholder="Your Email" required class="p-3 rounded-lg border-none text-base bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+      <textarea name="message" placeholder="Your Message" rows="5" required class="p-3 rounded-lg border-none text-base bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+      <button type="submit" class="p-3 bg-yellow-500 text-black font-semibold rounded-lg cursor-pointer transition-all duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-lg">
+        Send Message
+      </button>
+    </form>
+
+    <!-- Social Media Links -->
+    <div class="socials text-center mt-12">
+      <h3 class="text-white text-2xl font-semibold mb-4">Find me online</h3>
+      <!-- Enhanced social media icon hover effects -->
+      <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p" target="_blank" class="text-yellow-500 text-4xl mx-3 transition-all duration-300 hover:scale-150 hover:text-white transform hover:-translate-y-1" aria-label="Spotify Profile"><i class="fab fa-spotify"></i></a>
+      <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" class="text-yellow-500 text-4xl mx-3 transition-all duration-300 hover:scale-150 hover:text-white transform hover:-translate-y-1" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UClIGR8UlJveDkFBtGl6qpQg" target="_blank" class="text-yellow-500 text-4xl mx-3 transition-all duration-300 hover:scale-150 hover:text-white transform hover:-translate-y-1" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-5 bg-gray-800 text-gray-400 text-sm rounded-t-lg shadow-inner">
+    &copy; 2025 Leonardo Véliz – All rights reserved.
   </footer>
 
   <script>
+    // JavaScript for smooth scrolling on navigation clicks
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Verhindert das Standardverhalten des Ankers (direktes Springen)
-
+        e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth' // Sorgt für die sanfte Scroll-Animation
+          behavior: 'smooth'
         });
       });
     });
+
+    // JavaScript for section scroll animation (Fade-in / Slide-up)
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observerOptions = {
+      root: null, /* The viewport is the root */
+      rootMargin: '0px',
+      threshold: 0.1 /* The section becomes visible when 10% of it is in the viewport */
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); /* Stop observing after the animation has played once */
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    // JavaScript for the Image Carousel
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselPrevBtn = document.getElementById('carouselPrev');
+    const carouselNextBtn = document.getElementById('carouselNext');
+    const carouselDotsContainer = document.getElementById('carouselDots');
+
+    let currentSlideIndex = 0;
+    const totalSlides = carouselSlides.length;
+
+    // Function to update carousel position
+    function updateCarousel() {
+      const offset = -currentSlideIndex * 100;
+      carouselTrack.style.transform = `translateX(${offset}%)`;
+      updateDots();
+    }
+
+    // Function to go to the next slide
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    // Function to go to the previous slide
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // Function to update dot indicators
+    function updateDots() {
+      carouselDotsContainer.innerHTML = ''; // Clear existing dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('carousel-dot');
+        if (i === currentSlideIndex) {
+          dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+          currentSlideIndex = i;
+          updateCarousel();
+        });
+        carouselDotsContainer.appendChild(dot);
+      }
+    }
+
+    // Event listeners for navigation buttons
+    carouselPrevBtn.addEventListener('click', prevSlide);
+    carouselNextBtn.addEventListener('click', nextSlide);
+
+    // Initialize carousel on page load
+    updateCarousel();
   </script>
 </body>
 </html>
