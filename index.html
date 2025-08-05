@@ -205,12 +205,12 @@
       color: #e3b23c;
     }
 
-    /* Mobile-specific hero image positioning */
+    /* Mobile-specific hero styles */
     @media (max-width: 767px) {
       .header-bg {
-        /* Use the new mobile-specific image */
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
-                          url('https://github.com/leonardo-veliz/leonardo-veliz/blob/main/try%20(1).jpg?raw=true') no-repeat center center/cover;
+        /* Use the new mobile-specific image and gradient */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+                    url('https://github.com/leonardo-veliz/leonardo-veliz/blob/main/try%20(1).jpg?raw=true') no-repeat center center/cover;
         /* Position the text content at the top */
         align-items: flex-start;
         /* Add padding to the top of the header for spacing */
@@ -759,8 +759,8 @@
         toggleLegalLanguageButton.textContent = 'Switch to English';
       } else {
         // Currently German, switch to English
-        impressumDe.classList.add('hidden');
         impressumEn.classList.remove('hidden');
+        impressumDe.classList.add('hidden');
         toggleLegalLanguageButton.textContent = 'Switch to German';
       }
     });
