@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- EXTREME SEO OPTIMIZATION -->
-    <title>Leonardo Véliz | Music Producer, Composer & Beatmaker</title>
+    <title>Leonardo Véliz | Music Producer & Composer </title>
     <meta name="description" content="Leonardo Véliz is a passionate music producer and composer based in Germany. Specializing in film scores, beats, and premium audio production. Let's create something unique.">
     <meta name="keywords" content="Leonardo Véliz, Music Producer, Composer, Beatmaker, Film Score, Audio Production, Karlsruhe">
     <meta name="author" content="Leonardo Véliz">
+    <link rel="canonical" href="https://leonardo-veliz.github.io/">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Leonardo Véliz | Music Producer & Composer">
@@ -16,6 +17,30 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leonardo-veliz.github.io/"> 
     <meta property="og:image" content="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg"> 
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leonardo Véliz | Music Producer & Composer">
+    <meta name="twitter:description" content="Passionate music producer and composer. Explore my sonic archive of scores and beats.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg">
+
+    <!-- Schema.org JSON-LD for Musician -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Leonardo Véliz",
+      "url": "https://leonardo-veliz.github.io/",
+      "image": "https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg",
+      "description": "Music producer, composer and beatmaker based in Karlsruhe, Germany.",
+      "genre": ["Film Score", "Hip-Hop", "Jazz", "Electronic"],
+      "sameAs": [
+        "https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p",
+        "https://www.instagram.com/leonardo_velizz/",
+        "https://www.youtube.com/@leonardo_velizz"
+      ]
+    }
+    </script>
 
     <!-- PERFORMANCE HINTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +53,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Icons: Zuverlässiges Laden (Verhindert fehlende Pfeile/Icons auf Mobile) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom Config -->
     <script>
@@ -90,9 +115,8 @@
             .texture-overlay { opacity: 0.30; }
         }
 
-        /* PURE & SIMPLE GALLERY CSS (Bulletproof) */
+        /* PURE & SIMPLE GALLERY CSS */
         .gallery-img {
-            /* 100% Sättigung, keine Verdunkelung, pures Bild */
             filter: grayscale(0%) brightness(100%); 
             transform: scale(1); 
             opacity: 1 !important; 
@@ -103,7 +127,6 @@
             cursor: pointer;
         }
         
-        /* Bei Hover / Touch vergrößert sich NUR das berührte Bild leicht */
         .gallery-img:hover {
             transform: scale(1.03);
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
@@ -139,7 +162,7 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
         #gallery-container { 
-            scroll-behavior: auto; /* JS übernimmt das Smooth-Scrolling */
+            scroll-behavior: auto;
         }
 
         /* Accordion Utility Class */
@@ -203,19 +226,35 @@
 
     <!-- HERO SECTION -->
     <header class="relative h-[100svh] w-full flex items-center justify-center overflow-hidden">
-        <video autoplay muted loop playsinline class="video-bg">
+        <!-- Added poster attribute for performance (prevents blank screen while loading) -->
+        <video autoplay muted loop playsinline poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="video-bg">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-video-of-ink-moving-in-water-3255-large.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-studio-dark via-transparent to-transparent opacity-90"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-studio-dark/50 via-transparent to-transparent"></div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
-            <h2 class="text-xs md:text-sm uppercase tracking-[0.5em] mb-6 text-accent animate-slide-up" style="animation-delay: 0.2s;">
+            <!-- Changed h2 to p for proper semantic SEO hierarchy -->
+            <p class="text-xs md:text-sm uppercase tracking-[0.5em] mb-6 text-accent animate-slide-up" style="animation-delay: 0.2s;">
                 Music Producer & Composer
-            </h2>
+            </p>
             <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-normal tracking-widest animate-slide-up leading-[1.1] md:leading-[1] uppercase text-studio-light pr-2 md:pr-4" style="animation-delay: 0.4s;">
                 Leonardo <br> Véliz
             </h1>
+            
+            <div class="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 animate-slide-up" style="animation-delay: 0.6s;">
+                <a href="#contact" class="px-8 py-3 border border-studio-light/30 rounded-full hover:bg-studio-light hover:text-studio-dark transition-all duration-300 text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium">
+                    Let's Connect
+                </a>
+                
+                <div class="h-px w-8 bg-studio-light/20 hidden sm:block"></div>
+                
+                <div class="flex items-center gap-6 text-xl text-studio-light/50">
+                    <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p" target="_blank" aria-label="Spotify" class="hover:text-[#1DB954] hover:scale-110 transition-all duration-200"><i class="fab fa-spotify"></i></a>
+                    <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" aria-label="Instagram" class="hover:text-[#E1306C] hover:scale-110 transition-all duration-200"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@leonardo_velizz" target="_blank" aria-label="YouTube" class="hover:text-[#FF0000] hover:scale-110 transition-all duration-200"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
         </div>
         
         <a href="#work" aria-label="Scroll down to work" class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce hover:text-accent transition-colors duration-200 z-20 cursor-pointer p-4">
@@ -225,13 +264,12 @@
 
     <main class="relative z-20 bg-studio-dark">
 
-        <!-- WORK SECTION (Reduced to the core: 2 Albums) -->
+        <!-- WORK SECTION -->
         <section id="work" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-studio-light/10 pb-8 gap-6">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Selected Works</h2>
                 </div>
-                <!-- Filters stay exacty as they were -->
                 <div class="flex flex-wrap gap-4 md:space-x-6 mt-4 md:mt-0 text-xs md:text-sm uppercase tracking-widest" id="portfolio-filters">
                     <button class="filter-btn active text-accent opacity-100 transition-all duration-200 relative" data-filter="all">
                         All <span class="absolute -bottom-2 left-0 w-full h-[1px] bg-accent"></span>
@@ -245,10 +283,9 @@
                 </div>
             </div>
 
-            <!-- PORTFOLIO GRID: Just the two primary projects, side-by-side -->
+            <!-- PORTFOLIO GRID -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" id="portfolio-grid">
                 
-                <!-- Track 1: Film Score -->
                 <div class="flex flex-col gap-4 portfolio-item transition-all duration-500" data-category="film">
                     <div class="w-full rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-white/5 bg-black">
                         <iframe style="border-radius:12px; background: black;" src="https://open.spotify.com/embed/album/3a48fDKRanGWbnErKefTaa?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -259,7 +296,6 @@
                     </div>
                 </div>
 
-                <!-- Track 2: Beats -->
                 <div class="flex flex-col gap-4 portfolio-item transition-all duration-500" data-category="beats">
                     <div class="w-full rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-white/5 bg-black">
                         <iframe style="border-radius:12px; background: black;" src="https://open.spotify.com/embed/album/5ZZkQ2DCEQsvyGcGCnWovG?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -276,21 +312,18 @@
         <!-- ABOUT ME SECTION -->
         <section id="about" class="py-24 md:py-32 bg-[#0c0b0a] border-y border-studio-light/5 shadow-inner relative">
             
-            <!-- PART 1: The Accordion Text -->
             <div class="px-6 md:px-12 max-w-4xl mx-auto mb-24">
                 <div class="mb-12 border-b border-studio-light/10 pb-6 flex justify-between items-end">
                     <h2 class="text-2xl md:text-4xl font-bold uppercase tracking-tight text-studio-light">About Me</h2>
                 </div>
 
                 <div class="flex flex-col">
-                    <!-- Category 01 -->
                     <div class="border-b border-white/10">
                         <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group" onclick="toggleAccordion('about-1', this)">
                             <span class="text-lg md:text-xl font-medium text-gray-300 group-hover:text-white transition-colors">01 — Production & Composition</span>
                             <i class="fas fa-plus text-accent transform transition-transform duration-300 icon-indicator"></i>
                         </button>
                         <div id="about-1" class="accordion-content">
-                            <!-- TEXT LESBARKEIT: text-gray-200 und font-normal -->
                             <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base pr-4 md:pr-12">
                                 <p>Leonardo Véliz is a versatile music producer, composer, and multi-instrumentalist. His passion lies in creating unique tracks across diverse genres. For over 5 years, Leonardo has been intensely involved in music production. He masters various software and techniques across a wide spectrum of genres and has successfully collaborated with artists such as Nelita to realize their artistic visions through his sound design and production. Most recently, he has started two new projects with artist Emily LadyStar, and composed the film score for the short film Kite.</p>
                                 <p>A defining element of his work is his love for organic, recorded sounds — from a sampled coffee cup to self-sung choirs, a chewing gum box as a shaker, or whatever he can get his hands on. This approach gives his productions a distinctly organic texture and creative sound design that sets them apart. His versatility and production style have already earned praise from producers such as Thilo Berg.</p>
@@ -299,7 +332,6 @@
                         </div>
                     </div>
 
-                    <!-- Category 02 -->
                     <div class="border-b border-white/10">
                         <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group" onclick="toggleAccordion('about-2', this)">
                             <span class="text-lg md:text-xl font-medium text-gray-300 group-hover:text-white transition-colors">02 — Musical Background</span>
@@ -313,7 +345,6 @@
                         </div>
                     </div>
 
-                    <!-- Category 03 -->
                     <div class="border-b border-white/10">
                         <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group" onclick="toggleAccordion('about-3', this)">
                             <span class="text-lg md:text-xl font-medium text-gray-300 group-hover:text-white transition-colors">03 — Live & Collaborations</span>
@@ -327,7 +358,6 @@
                         </div>
                     </div>
 
-                    <!-- Category 04 - Genres -->
                     <div class="border-b border-white/10">
                         <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group" onclick="toggleAccordion('about-4', this)">
                             <span class="text-lg md:text-xl font-medium text-gray-300 group-hover:text-white transition-colors">04 — Genres & Styles</span>
@@ -335,7 +365,6 @@
                         </button>
                         <div id="about-4" class="accordion-content">
                             <div class="pb-8 pt-2">
-                                <!-- Elegante "Pills" für die Genres (inkl. Rock) -->
                                 <div class="flex flex-wrap gap-3">
                                     <span class="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:border-accent transition-colors">Hip-Hop</span>
                                     <span class="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:border-accent transition-colors">Pop</span>
@@ -357,7 +386,6 @@
                 </div>
             </div>
 
-            <!-- PART 2: The Visuals (Restored Center-Focus Animation) -->
             <div class="px-6 md:px-12 max-w-7xl mx-auto mb-12 flex justify-between items-center">
                  <h2 class="text-xs md:text-sm uppercase tracking-[0.4em] text-accent font-medium">Visuals</h2>
                  <i class="fas fa-arrows-alt-h text-gray-600 text-xl animate-pulse md:hidden"></i>
@@ -365,55 +393,53 @@
             
             <div class="relative max-w-[1400px] mx-auto group" id="gallery-wrapper">
                 
-                <button id="scroll-left" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-studio-dark/80 backdrop-blur-md text-studio-light rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.5)] flex items-center justify-center opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-accent hover:text-studio-dark hover:scale-110 border border-white/10 focus:outline-none" aria-label="Scroll left">
+                <button id="scroll-left" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-studio-dark/80 backdrop-blur-md text-studio-light rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.5)] hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-accent hover:text-studio-dark hover:scale-110 border border-white/10 focus:outline-none" aria-label="Scroll left">
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <!-- WICHTIG: flex-row flex-nowrap zwingt die Bilder in eine horizontale Linie -->
+                <!-- Added decoding="async" for better image performance -->
                 <div class="flex flex-row flex-nowrap overflow-x-auto gap-4 md:gap-8 px-6 md:px-12 pb-16 pt-8 no-scrollbar" id="gallery-container">
                     
-                    <!-- SET 1 -->
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20ImpactH%20Leo%20Close%20b%26w.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Studio Session Leonardo" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20ImpactH%20Leo%20Close%20b%26w.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Studio Session Leonardo" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Looping Performance" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Looping Performance" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(3_2025)%20Schulband%20Bandabend%20Leo%20Full%20Drums%20green.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Drums Playing" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(3_2025)%20Schulband%20Bandabend%20Leo%20Full%20Drums%20green.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Drums Playing" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo-Quentin%202.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Duo Setup" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo-Quentin%202.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Duo Setup" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Producer Profile" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Producer Profile" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20SB%20Abiball%20Leo%20Drums%20happy.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Drums Happy Moment" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20SB%20Abiball%20Leo%20Drums%20happy.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Drums Happy Moment" loading="lazy" decoding="async">
                     </div>
 
-                    <!-- SET 2 -->
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20ImpactH%20Leo%20Close%20b%26w.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Studio Session Leonardo" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20ImpactH%20Leo%20Close%20b%26w.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Studio Session Leonardo" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Looping Performance" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Looping Performance" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(3_2025)%20Schulband%20Bandabend%20Leo%20Full%20Drums%20green.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Drums Playing" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(3_2025)%20Schulband%20Bandabend%20Leo%20Full%20Drums%20green.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Drums Playing" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo-Quentin%202.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Duo Setup" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20Live%20Looping%20Abiball%20Leo-Quentin%202.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Live Duo Setup" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Producer Profile" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(5_2025)%20VQ%20Mikado%20Leo%20Profil.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Producer Profile" loading="lazy" decoding="async">
                     </div>
                     <div class="shrink-0">
-                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20SB%20Abiball%20Leo%20Drums%20happy.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Drums Happy Moment" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/leonardo-veliz/leonardo-veliz/main/(7_2025)%20SB%20Abiball%20Leo%20Drums%20happy.jpg" class="gallery-img h-[35vh] md:h-[45vh] min-h-[250px] w-auto rounded-xl" alt="Drums Happy Moment" loading="lazy" decoding="async">
                     </div>
                 </div>
 
-                <button id="scroll-right" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-studio-dark/80 backdrop-blur-md text-studio-light rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.5)] flex items-center justify-center opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-accent hover:text-studio-dark hover:scale-110 border border-white/10 focus:outline-none" aria-label="Scroll right">
+                <button id="scroll-right" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-studio-dark/80 backdrop-blur-md text-studio-light rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.5)] hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-accent hover:text-studio-dark hover:scale-110 border border-white/10 focus:outline-none" aria-label="Scroll right">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -425,9 +451,9 @@
             
             <div class="mb-16 bg-[#0c0b0a] p-8 md:p-12 rounded-2xl border border-studio-light/5 shadow-2xl">
                 <p class="text-gray-400 mb-6 font-light">Email me directly:</p>
-                <a href="mailto:leonardo.veliz.rosa@gmail.com" class="text-[4.5vw] min-[400px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-studio-light hover:text-accent transition-colors duration-200 block mb-12 whitespace-nowrap">
+                <span class="text-[4.5vw] min-[400px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-studio-light hover:text-accent transition-colors duration-200 block mb-12 whitespace-nowrap cursor-text">
                     leonardo.veliz.rosa@gmail.com
-                </a>
+                </span>
                 
                 <p class="text-gray-400 mb-6 font-light">Or connect on socials:</p>
                 <div class="flex justify-center space-x-8 md:space-x-12 text-3xl text-studio-light/70">
@@ -476,7 +502,7 @@
                 </div>
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Contact</h3>
-                    <p class="leading-relaxed">Phone: +49 157 7400 8123<br>Email: <a href="mailto:leonardo.veliz.rosa@gmail.com" class="hover:text-accent">leonardo.veliz.rosa@gmail.com</a></p>
+                    <p class="leading-relaxed">Phone: +49 157 7400 8123<br>Email: <span class="hover:text-accent transition-colors duration-200 cursor-text">leonardo.veliz.rosa@gmail.com</span></p>
                 </div>
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Consumer Dispute Resolution</h3>
@@ -491,7 +517,7 @@
                 </div>
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Kontakt</h3>
-                    <p class="leading-relaxed">Telefon: +49 157 7400 8123<br>E-Mail: <a href="mailto:leonardo.veliz.rosa@gmail.com" class="hover:text-accent">leonardo.veliz.rosa@gmail.com</a></p>
+                    <p class="leading-relaxed">Telefon: +49 157 7400 8123<br>E-Mail: <span class="hover:text-accent transition-colors duration-200 cursor-text">leonardo.veliz.rosa@gmail.com</span></p>
                 </div>
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Verbraucherstreitbeilegung</h3>
@@ -547,7 +573,7 @@
         mobileBtn.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-        // --- 3. ACCORDION LOGIC (About Text & Genres) ---
+        // --- 3. ACCORDION LOGIC ---
         function toggleAccordion(id, btnElement) {
             const content = document.getElementById(id);
             const icon = btnElement.querySelector('.icon-indicator');
@@ -638,7 +664,7 @@
             });
         });
 
-        // --- 6. SIMPLE & BULLETPROOF GALLERY SCROLL ---
+        // --- 6. GALLERY SCROLL ---
         const galleryContainer = document.getElementById('gallery-container');
         const galleryWrapper = document.getElementById('gallery-wrapper');
         const scrollLeftBtn = document.getElementById('scroll-left');
@@ -649,14 +675,12 @@
             let isManualScrolling = false;
             let manualScrollTimeout;
             let animationFrameId;
-            const scrollSpeed = 0.8; // Sanfte, stetige Geschwindigkeit
+            const scrollSpeed = 0.8; 
 
-            // Purer, endloser Scroll-Loop (Keine Fokus-Berechnungen mehr!)
             function autoScrollGallery() {
                 if (!isHoveringGallery && !isManualScrolling) {
                     galleryContainer.scrollLeft += scrollSpeed;
                     
-                    // Seamless loop back to the start
                     if (galleryContainer.scrollLeft >= galleryContainer.scrollWidth / 2) {
                         galleryContainer.scrollLeft -= galleryContainer.scrollWidth / 2; 
                     }
@@ -665,16 +689,13 @@
                 animationFrameId = requestAnimationFrame(autoScrollGallery);
             }
             
-            // Start the loop
             autoScrollGallery();
 
-            // Stop scrolling completely on interaction (Hover / Touch)
             galleryWrapper.addEventListener('mouseenter', () => isHoveringGallery = true);
             galleryWrapper.addEventListener('mouseleave', () => isHoveringGallery = false);
             galleryWrapper.addEventListener('touchstart', () => isHoveringGallery = true, {passive: true});
             galleryWrapper.addEventListener('touchend', () => isHoveringGallery = false);
             
-            // Manual overrides via arrows
             function handleManualScroll(offset) {
                 isManualScrolling = true; 
                 clearTimeout(manualScrollTimeout); 
@@ -683,7 +704,7 @@
                 
                 manualScrollTimeout = setTimeout(() => {
                     isManualScrolling = false;
-                }, 800); // Wartet bis der manuelle Scroll-Vorgang fertig ist, bevor es automatisch weitergeht
+                }, 800); 
             }
 
             if (scrollLeftBtn && scrollRightBtn) {
