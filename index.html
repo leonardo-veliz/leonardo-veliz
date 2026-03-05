@@ -236,7 +236,7 @@
 
     <!-- MOBILE OVERLAY MENU -->
     <div id="mobile-menu" class="fixed inset-0 bg-studio-dark/95 backdrop-blur-lg z-[55] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="flex flex-col items-center space-y-8 text-2xl uppercase tracking-widest">
+        <div class="flex flex-col items-center space-y-8 text-2xl uppercase tracking-widest text-center">
             <a href="#work" class="mobile-link hover:text-accent transition-colors">Work</a>
             <a href="#about" class="mobile-link hover:text-accent transition-colors">About Me</a>
             <a href="#contact" class="mobile-link text-accent mt-8 border border-accent px-8 py-3 rounded-full">Contact</a>
@@ -266,7 +266,7 @@
                 
                 <div class="h-px w-8 bg-studio-light/20 hidden sm:block"></div>
                 
-                <div class="flex items-center gap-6 text-xl text-studio-light/50">
+                <div class="flex items-center justify-center gap-6 text-xl text-studio-light/50">
                     <a href="https://open.spotify.com/artist/5cgxZgumReqHCF022jTj8p" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="hover:text-[#1DB954] hover:scale-110 transition-all duration-200"><i class="fab fa-spotify"></i></a>
                     <a href="https://www.instagram.com/leonardo_velizz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-[#E1306C] hover:scale-110 transition-all duration-200"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.youtube.com/@leonardo_velizz" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="hover:text-[#FF0000] hover:scale-110 transition-all duration-200"><i class="fab fa-youtube"></i></a>
@@ -283,7 +283,6 @@
 
         <!-- WORK SECTION -->
         <section id="work" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-            <!-- Zentrierte Überschrift und Filter -->
             <div class="flex flex-col items-center text-center mb-16 border-b border-studio-light/10 pb-10 gap-8">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Selected Works</h2>
@@ -305,9 +304,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" id="portfolio-grid">
                 
                 <div class="flex flex-col gap-4 portfolio-item transition-all duration-500" data-category="film">
-                    <!-- Text oben -->
-                    <div class="px-2 mb-2">
-                        <span class="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-2 block"><i class="fas fa-film mr-2"></i> Composition</span>
+                    <!-- Text oben - Zentriert -->
+                    <div class="px-2 mb-4 text-center">
+                        <span class="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-2 flex items-center justify-center"><i class="fas fa-film mr-2"></i> Composition</span>
                         <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight text-studio-light">Film Music</h3>
                     </div>
                     <!-- Spotify Embed darunter -->
@@ -317,9 +316,9 @@
                 </div>
 
                 <div class="flex flex-col gap-4 portfolio-item transition-all duration-500" data-category="beats">
-                    <!-- Text oben -->
-                    <div class="px-2 mb-2">
-                        <span class="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-2 block"><i class="fas fa-drum mr-2"></i> Production</span>
+                    <!-- Text oben - Zentriert -->
+                    <div class="px-2 mb-4 text-center">
+                        <span class="text-accent text-[10px] font-bold tracking-[0.3em] uppercase mb-2 flex items-center justify-center"><i class="fas fa-drum mr-2"></i> Production</span>
                         <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-tight text-studio-light">Beats</h3>
                     </div>
                     <!-- Spotify Embed darunter -->
@@ -335,18 +334,19 @@
         <section id="about" class="py-24 md:py-32 bg-[#0c0b0a] border-y border-studio-light/5 shadow-inner relative">
             
             <div class="px-6 md:px-12 max-w-4xl mx-auto mb-24">
-                <div class="mb-12 border-b border-studio-light/10 pb-6 flex justify-between items-end">
+                <!-- Überschrift Zentriert -->
+                <div class="mb-12 border-b border-studio-light/10 pb-6 flex justify-center items-center text-center">
                     <h2 class="text-2xl md:text-4xl font-bold uppercase tracking-tight text-studio-light">About Me</h2>
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col max-w-2xl mx-auto w-full">
                     <div class="border-b border-white/10">
                         <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group" onclick="toggleAccordion('about-1', this)">
                             <span class="text-lg md:text-xl font-medium text-gray-300 group-hover:text-white transition-colors">01 — Production & Composition</span>
                             <i class="fas fa-plus text-accent transform transition-transform duration-300 icon-indicator"></i>
                         </button>
                         <div id="about-1" class="accordion-content">
-                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base pr-4 md:pr-12">
+                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base px-2 md:px-8 text-center">
                                 <p>Leonardo Véliz is a versatile music producer, composer, and multi-instrumentalist. His passion lies in creating unique tracks across diverse genres. For over 5 years, Leonardo has been intensely involved in music production. He masters various software and techniques across a wide spectrum of genres and has successfully collaborated with artists such as Nelita to realize their artistic visions through his sound design and production. Most recently, he has started two new projects with artist Emily LadyStar, and composed the film score for the short film Kite.</p>
                                 <p>A defining element of his work is his love for organic, recorded sounds — from a sampled coffee cup to self-sung choirs, a chewing gum box as a shaker, or whatever he can get his hands on. This approach gives his productions a distinctly organic texture and creative sound design that sets them apart. His versatility and production style have already earned praise from producers such as Thilo Berg.</p>
                                 <p>What makes Leonardo's productions particularly personal is that he records live instruments himself — drums, trumpet, piano, and most recently bass guitar — lending each track an organic, emotional quality that goes beyond the purely digital.</p>
@@ -360,7 +360,7 @@
                             <i class="fas fa-plus text-accent transform transition-transform duration-300 icon-indicator"></i>
                         </button>
                         <div id="about-2" class="accordion-content">
-                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base pr-4 md:pr-12">
+                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base px-2 md:px-8 text-center">
                                 <p>His musical journey began early: twelve years of drum studies and over eleven years of trumpet lessons at the conservatory, each concluded with top marks in his annual examinations, built him a solid technical foundation. Leonardo has also been playing the piano for five years, and is currently expanding his skills further by learning bass guitar.</p>
                                 <p>He has successfully participated twice in Jugend komponiert BW, a competitive composition workshop in Baden-Württemberg. Leonardo also teaches at a local music school and continuously broadens his musical horizon by attending workshops with renowned musicians, ensuring his skills and perspectives keep evolving.</p>
                             </div>
@@ -373,7 +373,7 @@
                             <i class="fas fa-plus text-accent transform transition-transform duration-300 icon-indicator"></i>
                         </button>
                         <div id="about-3" class="accordion-content">
-                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base pr-4 md:pr-12">
+                            <div class="pb-8 text-gray-200 font-normal leading-relaxed space-y-4 text-sm md:text-base px-2 md:px-8 text-center">
                                 <p>Leonardo plays live music in venues like Jazzclub Karlsruhe and with various bands, switching between keys, drums, and trumpet across Rock, Pop, Jazz, and Funk projects. He also co-founded the "Véliz-Quintett", a formation of young jazz musicians from Karlsruhe, which performed at events like the HKA and the "Das Fest" pre-festival.</p>
                                 <p>A special recognition was the spontaneous invitation from renowned saxophonist Peter Lehel to join the Big Band of the Hochschule für Musik Karlsruhe as a trumpeter — an experience that extended into two further semesters, with performances both at the Hochschule and at various other locations, including frequent opportunities to take the solo. Most recently, Leonardo has begun performing his own compositions at jam sessions, bringing his producer's perspective directly to the stage.</p>
                             </div>
@@ -386,8 +386,8 @@
                             <i class="fas fa-plus text-accent transform transition-transform duration-300 icon-indicator"></i>
                         </button>
                         <div id="about-4" class="accordion-content">
-                            <div class="pb-8 pt-2">
-                                <div class="flex flex-wrap gap-3">
+                            <div class="pb-8 pt-2 px-2 md:px-8 text-center">
+                                <div class="flex flex-wrap justify-center gap-3">
                                     <span class="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:border-accent transition-colors">Hip-Hop</span>
                                     <span class="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:border-accent transition-colors">Pop</span>
                                     <span class="px-4 py-2 border border-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:border-accent transition-colors">Rock</span>
@@ -408,7 +408,7 @@
                 </div>
             </div>
 
-            <div class="px-6 md:px-12 max-w-7xl mx-auto mb-12 flex justify-between items-center">
+            <div class="px-6 md:px-12 max-w-7xl mx-auto mb-12 flex flex-col justify-center items-center text-center gap-3">
                  <h2 class="text-xs md:text-sm uppercase tracking-[0.4em] text-accent font-medium">Visuals</h2>
                  <i class="fas fa-arrows-alt-h text-gray-600 text-xl animate-pulse md:hidden"></i>
             </div>
@@ -485,21 +485,21 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <form id="contactForm" action="https://formspree.io/f/xzzvanjd" method="POST" class="flex flex-col gap-8 text-left max-w-2xl mx-auto">
+            <!-- Contact Form (Zentriert) -->
+            <form id="contactForm" action="https://formspree.io/f/xzzvanjd" method="POST" class="flex flex-col gap-8 text-center max-w-2xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="relative">
-                        <input type="text" name="name" id="name" placeholder=" " required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light focus:outline-none transition-colors">
-                        <label for="name" class="absolute left-0 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-3 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-3 transition-all duration-200">Your Name</label>
+                        <input type="text" name="name" id="name" placeholder=" " required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light text-center focus:outline-none transition-colors">
+                        <label for="name" class="absolute left-1/2 -translate-x-1/2 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-3 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-3 transition-all duration-200">Your Name</label>
                     </div>
                     <div class="relative">
-                        <input type="email" name="email" id="email" placeholder=" " required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light focus:outline-none transition-colors">
-                        <label for="email" class="absolute left-0 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-3 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-3 transition-all duration-200">Your Email</label>
+                        <input type="email" name="email" id="email" placeholder=" " required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light text-center focus:outline-none transition-colors">
+                        <label for="email" class="absolute left-1/2 -translate-x-1/2 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-3 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-3 transition-all duration-200">Your Email</label>
                     </div>
                 </div>
                 <div class="relative mt-4">
-                    <textarea name="message" id="message" placeholder=" " rows="4" required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light focus:outline-none transition-colors resize-none"></textarea>
-                    <label for="message" class="absolute left-0 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-4 transition-all duration-200">Tell me about your project...</label>
+                    <textarea name="message" id="message" placeholder=" " rows="4" required class="peer w-full bg-transparent border-b border-studio-light/20 py-3 text-studio-light text-center focus:outline-none transition-colors resize-none"></textarea>
+                    <label for="message" class="absolute left-1/2 -translate-x-1/2 top-3 text-gray-500 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-accent peer-valid:text-xs peer-valid:-top-4 transition-all duration-200">Tell me about your project...</label>
                 </div>
                 
                 <button type="submit" class="mt-8 px-10 py-4 bg-accent text-studio-light font-bold uppercase tracking-[0.2em] text-xs rounded-full hover:bg-studio-light hover:text-studio-dark hover:scale-105 hover:shadow-[0_10px_30px_rgba(59,130,246,0.3)] transition-all duration-200 self-center">
@@ -510,14 +510,14 @@
 
         <!-- LEGAL NOTICE / IMPRESSUM -->
         <section id="legal-notice" class="py-16 px-6 max-w-3xl mx-auto border-t border-studio-light/10 text-gray-500 text-xs md:text-sm font-light">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+            <div class="flex flex-col justify-center items-center text-center mb-10 gap-4">
                 <h2 class="uppercase tracking-[0.3em] text-studio-light/40">Legal Information</h2>
                 <button id="toggleLegalLanguage" class="uppercase tracking-widest text-accent hover:text-studio-light transition-colors border-b border-accent/30 pb-1">
                     Switch to German
                 </button>
             </div>
 
-            <div id="impressum-en" class="space-y-6 animate-fade-in bg-[#0c0b0a] p-6 md:p-8 rounded-xl border border-studio-light/5">
+            <div id="impressum-en" class="space-y-6 animate-fade-in bg-[#0c0b0a] p-6 md:p-8 rounded-xl border border-studio-light/5 text-center">
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Legal Notice</h3>
                     <p class="leading-relaxed">Leonardo Véliz Rosa<br>Music Production<br>Links Der Alb 12<br>76199 Karlsruhe, Germany</p>
@@ -532,7 +532,7 @@
                 </div>
             </div>
 
-            <div id="impressum-de" class="space-y-6 hidden animate-fade-in bg-[#0c0b0a] p-6 md:p-8 rounded-xl border border-studio-light/5">
+            <div id="impressum-de" class="space-y-6 hidden animate-fade-in bg-[#0c0b0a] p-6 md:p-8 rounded-xl border border-studio-light/5 text-center">
                 <div>
                     <h3 class="text-studio-light font-medium mb-1 uppercase tracking-widest text-[10px] md:text-xs">Impressum</h3>
                     <p class="leading-relaxed">Leonardo Véliz Rosa<br>Musikproduktion<br>Links Der Alb 12<br>76199 Karlsruhe</p>
